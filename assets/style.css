@@ -1,0 +1,267 @@
+
+* {
+  margin: 1;
+  padding: 1;
+  box-sizing: border-box;
+}
+/* This creates a skinny side bar fixed to the left of the page */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5rem;
+    padding: 2rem 1rem;
+    background-color: #cbd3dd;
+    z-index: 1050;
+    transition: width 0.1s ease-in-out;
+}
+
+/* when the user hovers on the sidebar, expand it */
+.sidebar:hover {
+    width: 16rem;
+}
+
+/* make sure the contents of the navlink don't wrap when navbar collapses */
+.sidebar .nav-link {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* fix the width of the icons */
+.sidebar .nav-link i {
+    width: 2rem;
+}
+
+/* hide the navlink labels by default */
+.sidebar .nav-link span {
+    visibility: hidden;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+}
+
+/* when the sidebar is hovered, reveal the labels */
+.sidebar:hover .nav-link span {
+    visibility: visible;
+    opacity: 1;
+    color: black;
+}
+
+/* container for the sidebar header. make sure the contents don't wrap when
+ * the sidebar is collapsed.
+ */
+.sidebar-header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* position the header relative to the logo and hide by default */
+.sidebar-header h2 {
+    opacity: 0;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+/* reveal the header when the sidebar is toggled */
+.sidebar:hover .sidebar-header h2 {
+    opacity: 1;
+}
+
+/* position the content relative to the collapsed sidebar */
+.content {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 2rem 1rem;
+}
+
+.dropdown-header {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    white-space: nowrap;
+}
+.input-container {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    white-space: nowrap;}
+.user-input {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: border-box;
+    height: 2rem;
+    background-color: lightgrey;
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+.response_html_design {
+      margin: auto;
+      display: inline-block;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+
+      vertical-align: top;
+      white-space: normal;
+    word-wrap: break-word;
+}
+
+.conversation-container {
+          margin: auto;
+      display: inline-block;
+      box-shadow: 0 4px 8px 0 rgba(0, 0.2, 0.2, 0.2);
+      transition: 0.3s;
+      width: 90vh;
+      height: auto;
+      vertical-align: top;
+      white-space: normal;
+    word-wrap: break-word;
+}
+
+.response_html_design:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+/* mouse hover */
+.button-container {
+  background-color: #4CAF50;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button-container:hover {
+  background-color: #45a049;
+}
+
+.button-container:focus {
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 4px #5a01a7;
+  transition: 0.7s;
+}
+
+.button-container:active {
+  background-color: #ffbf00;
+}
+
+
+#upload-video{
+    .hover:
+    background-color: #4CAF50;
+
+}
+
